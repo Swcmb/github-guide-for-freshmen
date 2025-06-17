@@ -17,6 +17,8 @@
             <li><a href="#registration">注册账号</a></li>
             <li><a href="#repository">创建仓库</a></li>
             <li><a href="#basic-operations">基本操作</a></li>
+            <li><a href="#note-specification">笔记规范</a></li>
+            <li><a href="#automation">自动化工作流</a></li>
             <li><a href="#github-pages">GitHub Pages</a></li>
         </ul>
     </nav>
@@ -61,6 +63,27 @@
             <h3>拉取更新</h3>
             <p>获取远程仓库的最新更改：</p>
             <pre><code>git pull</code></pre>
+        </section>
+        <section id="note-specification">
+            <h2>笔记格式规范</h2>
+            <p>在团队协作中，统一的笔记格式有助于信息管理和自动化处理。以下是推荐的Markdown笔记格式：</p>
+            <pre><code>---
+title: 标题                 # 示例：图论专题学习总结
+date: [撰写日期]           # 格式示例：2025-06-15 01:12:26
+categories: note           # 固定分类，必须为 note
+tags: [相关标签]           # 例如作者名字或关键词
+---</code></pre>
+            <h3>提交位置</h3>
+            <p>请将笔记的Markdown源文件直接提交至团队GitHub仓库中的note目录。所有笔记提交后可自动部署到团队博客，实现内容自动发布。</p>
+        </section>
+        <section id="automation">
+            <h2>仓库自动化管理</h2>
+            <h3>PR自动关闭控制</h3>
+            <p>可以通过GitHub Actions实现PR自动管理，例如在特定时间段（如每周日12:30至22:00）自动关闭新提交的PR，防止在该时间段内新增拉取请求。</p>
+            <h3>非活跃成员跟踪</h3>
+            <p>通过自动化工作流定期抓取团队成员列表，统计非活跃PR成员并发送提醒，有助于保持团队活跃度和项目进展。</p>
+            <h3>自动化部署</h3>
+            <p>配置GitHub Actions工作流，实现代码提交后自动构建和部署项目，例如将Markdown文件转换为静态网页并发布到GitHub Pages。</p>
         </section>
         <section id="github-pages">
             <h2>GitHub Pages</h2>
