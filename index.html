@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub入门指南 - 给大一新生</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>GitHub入门指南</h1>
+        <p>专为大一新生准备的GitHub使用教程</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#what-is-github">什么是GitHub</a></li>
+            <li><a href="#registration">注册账号</a></li>
+            <li><a href="#repository">创建仓库</a></li>
+            <li><a href="#basic-operations">基本操作</a></li>
+            <li><a href="#note-specification">笔记规范</a></li>
+            <li><a href="#automation">自动化工作流</a></li>
+            <li><a href="#github-pages">GitHub Pages</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="what-is-github">
+            <h2>什么是GitHub</h2>
+            <p>GitHub是一个基于Git的代码托管平台，它允许开发者存储、管理和分享代码。除了代码托管功能外，GitHub还提供了项目管理、问题跟踪、代码审查等功能，是全球最流行的开源项目托管平台之一。</p>
+        </section>
+        <section id="registration">
+            <h2>注册GitHub账号</h2>
+            <ol>
+                <li>访问GitHub官网：<a href="https://github.com" target="_blank">https://github.com</a></li>
+                <li>点击右上角的"Sign up"按钮</li>
+                <li>填写用户名、邮箱和密码</li>
+                <li>完成验证步骤</li>
+                <li>验证邮箱后，账号注册完成</li>
+            </ol>
+        </section>
+        <section id="repository">
+            <h2>创建仓库</h2>
+            <ol>
+                <li>登录GitHub后，点击右上角的"+"图标，选择"New repository"</li>
+                <li>填写仓库名称（例如：my-first-repo）</li>
+                <li>添加仓库描述（可选）</li>
+                <li>选择仓库可见性（Public或Private）</li>
+                <li>勾选"Initialize this repository with a README"</li>
+                <li>点击"Create repository"按钮</li>
+            </ol>
+        </section>
+        <section id="basic-operations">
+            <h2>基本操作</h2>
+            <h3>克隆仓库</h3>
+            <p>将远程仓库复制到本地：</p>
+            <pre><code>git clone https://github.com/你的用户名/你的仓库名.git</code></pre>
+            <h3>提交更改</h3>
+            <ol>
+                <li>在本地修改文件</li>
+                <li>添加更改到暂存区：<code>git add .</code></li>
+                <li>提交更改：<code>git commit -m "提交信息"</code></li>
+                <li>推送到远程仓库：<code>git push</code></li>
+            </ol>
+            <h3>拉取更新</h3>
+            <p>获取远程仓库的最新更改：</p>
+            <pre><code>git pull</code></pre>
+        </section>
+        <section id="note-specification">
+            <h2>笔记格式规范</h2>
+            <p>在团队协作中，统一的笔记格式有助于信息管理和自动化处理。以下是推荐的Markdown笔记格式：</p>
+            <pre><code>---
+title: 标题                 # 示例：图论专题学习总结
+date: [撰写日期]           # 格式示例：2025-06-15 01:12:26
+categories: note           # 固定分类，必须为 note
+tags: [相关标签]           # 例如作者名字或关键词
+---</code></pre>
+            <h3>提交位置</h3>
+            <p>请将笔记的Markdown源文件直接提交至团队GitHub仓库中的note目录。所有笔记提交后可自动部署到团队博客，实现内容自动发布。</p>
+        </section>
+        <section id="automation">
+            <h2>仓库自动化管理</h2>
+            <h3>PR自动关闭控制</h3>
+            <p>可以通过GitHub Actions实现PR自动管理，例如在特定时间段（如每周日12:30至22:00）自动关闭新提交的PR，防止在该时间段内新增拉取请求。</p>
+            <h3>非活跃成员跟踪</h3>
+            <p>通过自动化工作流定期抓取团队成员列表，统计非活跃PR成员并发送提醒，有助于保持团队活跃度和项目进展。</p>
+            <h3>自动化部署</h3>
+            <p>配置GitHub Actions工作流，实现代码提交后自动构建和部署项目，例如将Markdown文件转换为静态网页并发布到GitHub Pages。</p>
+        </section>
+        <section id="github-pages">
+            <h2>GitHub Pages</h2>
+            <p>GitHub Pages允许你直接从GitHub仓库托管静态网页。要启用GitHub Pages：</p>
+            <ol>
+                <li>进入仓库页面，点击"Settings"</li>
+                <li>在左侧导航栏中选择"Pages"</li>
+                <li>在"Source"部分，选择分支（通常是main或master）</li>
+                <li>选择根目录或/docs文件夹</li>
+                <li>点击"Save"，几分钟后你的网站将在https://你的用户名.github.io/你的仓库名/可用</li>
+            </ol>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 GitHub入门指南 | 为大一新生准备</p>
+    </footer>
+</body>
+</html>
